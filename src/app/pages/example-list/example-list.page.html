@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Productos <ion-button color="danger" (click)="logout()" size="small">Cerrar Sesión</ion-button></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-fab vertical="bottom" horizontal="end"slot="fixed">
+		<ion-fab-button routerLink="/example">
+			<ion-icon name="add"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+
+	<ion-list>
+		<ion-item button [routerLink]="['/example',example.id]" *ngFor="let example of (examples|async)">
+			{{example.nombre}}
+		</ion-item>
+	</ion-list>
+</ion-content>

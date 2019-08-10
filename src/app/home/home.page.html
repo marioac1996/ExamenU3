@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>iTech <ion-icon name="person" routerLink="/login" ></ion-icon></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+	<ion-list>
+		<ion-card button *ngFor="let example of (examples|async)">
+	 		<ion-item>
+				{{example.nombre}}
+			</ion-item>
+			<ion-row>
+			    <ion-col>
+			      <ion-badge color="secondary">Categoria: {{example.categoria}}</ion-badge>
+			    </ion-col>
+			</ion-row>
+			<ion-card-content>
+			    <p>{{example.descripcion}}</p>
+			</ion-card-content>
+			<ion-row>
+				<ion-col>
+					<ion-badge color="primary">Codigo: {{example.codigo}}</ion-badge>
+			    </ion-col>
+			    <ion-col size="4" offset="4">
+			      <ion-badge color="success">Precio: ${{example.pc}}</ion-badge>
+			    </ion-col>
+			</ion-row>
+ 		 </ion-card>
+	</ion-list>
+
+</ion-content>
